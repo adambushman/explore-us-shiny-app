@@ -1,3 +1,12 @@
+##############################
+# Explore the US Shiny App   #
+# A shiny app for exploring  #
+#   the uniquness of the USA #
+# -------------------------- #
+# Adam Bushman               #
+##############################
+
+
 library('shiny')
 library('shinythemes')
 library('tidycensus')
