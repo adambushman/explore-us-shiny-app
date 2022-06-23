@@ -6,6 +6,7 @@ library('tigris')
 library('sf')
 library('scales')
 
+
 options(tigris_use_cache = TRUE)
 countyDF <- get_decennial(geography = "county",
                           variables = "H1_001N", 
