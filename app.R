@@ -29,20 +29,26 @@ ui <- fluidPage(
     theme = shinytheme("yeti"),
 
     # Application title
-    titlePanel("Explore the US"),
-
-    # Sidebar with a slider input for number of bins 
-    sidebarLayout(
-        sidebarPanel(
-          selectInput("instate", "State",
-                      c("Utah", "California", "Nevada", "Arizona",
-                        "Oregon", "Washington", "Idaho"))
-        ),
-
-        # Show a plot of the generated distribution
-        mainPanel(
-           plotOutput("statePlot")
+    navbarPage("Explore the US", 
+    
+      tabPanel("State Population", 
+  
+        # Sidebar with a slider input for number of bins 
+        sidebarLayout(
+            sidebarPanel(
+              h3("State Population"), 
+              p("- Displayed by County"), 
+              p("- Color Adjusted to Mean"), 
+              selectInput("instate", "State", 
+                          sort(unique(countyDF$state)))
+            ),
+    
+            # Show a plot of the generated distribution
+            mainPanel(
+               plotOutput("statePlot")
+            )
         )
+      )
     )
 )
 
